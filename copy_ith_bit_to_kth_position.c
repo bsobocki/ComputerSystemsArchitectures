@@ -53,7 +53,8 @@ uint32_t copy_ith_bit_to_kth_pos(uint32_t x, size_t i, size_t k){
     uint32_t ith_bit_on_kth_pos = k>i ? ith_bit>>(k-i) : ith_bit<<(i-k); 
 
     x = reset_kth_bit(x, k);
-    return x | ith_bit_on_kth_pos; // logical OR will copy the value on the moved bith to the x
+    // logical OR will copy the value of the moved bit to the x
+    return x | ith_bit_on_kth_pos; 
 }
 
 

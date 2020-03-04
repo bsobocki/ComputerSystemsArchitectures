@@ -10,7 +10,7 @@
             Napisz fragment kodu, który skopiuje  i-ty  bit zmiennej x na pozycję  k-tą
 
             pozcja liczy się od lewej od 1 do 32
-            
+
         EN:
             Variables i, k satisfy the condition 0 ≤ i, k ≤ 31.
             Write the code, that copies i-th bit of the variable x to the k-th position
@@ -40,7 +40,7 @@ char* bits(uint32_t num){
 }
 
 uint32_t reset_kth_bit(uint32_t num, size_t k){
-    return num & ~(1 << (sizeof(num)*8-k));
+    return num & ~(1 << (32-k));
 }
 
 /* copy i-th bit to k-th position */

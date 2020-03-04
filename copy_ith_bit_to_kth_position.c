@@ -57,10 +57,15 @@ uint32_t copy_ith_bit_to_kth_pos(uint32_t x, size_t i, size_t k){
     return x | ith_bit_on_kth_pos; 
 }
 
+void test(uint32_t x, size_t i, size_t k){
+    uint32_t result = copy_ith_bit_to_kth_pos(x, i, k);
+    printf("copy %ld bit from %s to the %ld position.\nResult: %s\n\n", i, bits(x), k, bits(result));
+}
+
 
 int main(){
-    printf("%s\n", bits(copy_ith_bit_to_kth_pos(0b00000000100000000000000000000000, 9, 3)));
-    printf("%s\n", bits(copy_ith_bit_to_kth_pos(0b11111111011111111111111111111111, 9, 8)));
-    printf("%s\n", bits(copy_ith_bit_to_kth_pos(4, 32-2, 32)));
+    test(0b00000000100000000000000000000000, 9, 3);
+    test(0b11111111011111111111111111111111, 9 ,8);
+    test(4, 32-2, 32);
     return 0;
 }

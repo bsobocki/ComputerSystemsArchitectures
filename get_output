@@ -1,1 +1,6 @@
-gcc -Wall -Wextra 
+echo "start compiling *$1.c"
+gcc $1.c -o s -Wall 
+echo "creating $1.out"
+./s > $1.out
+rm s
+echo "done" 

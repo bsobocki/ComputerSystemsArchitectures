@@ -1,0 +1,12 @@
+before swap(x,y):
+	x=100
+	y=3
+after swap(x,y):
+	x=3
+	y=100
+before swap(x,y):
+	x=2147483647
+	y=2147483640
+after swap(x,y):
+	x=2147483640
+	y=2147483647

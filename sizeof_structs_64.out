@@ -1,0 +1,31 @@
+A: 24 bytes
+B: 24 bytes
+A1: 16 bytes
+B1: 24 bytes
+
+A.a: 1 bytes
+A.b: 8 bytes
+A.c: 1 bytes
+A.d: 2 bytes
+
+--------
+double: 8 bytes
+uint8_t: 1 bytes
+float: 4 bytes
+void *: 8 bytes
+void: 1 bytes
+
+--------
+C: 4 bytes
+C0: 1 bytes
+C1: 8 bytes
+C2: 8 bytes
+C3: 2 bytes
+C4: 8 bytes
+C5: 12 bytes
+
+--------
+bytes32: 32 bytes
+bytes40: 40 bytes
+bytes48: 48 bytes
+bytes56: 56 bytes

@@ -1,0 +1,6 @@
+echo "start compiling $1.c"
+gcc $1.c -o s -m32 -Wall 
+echo "creating $1.out"
+./s > $1.out
+rm s
+echo "done" 

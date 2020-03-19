@@ -34,22 +34,20 @@ int32_t threefourths(int32_t x){
     // the rest modulo of the x / 4 is on the last 2 bits
     int32_t modulo = x & 3;
 
-    // x % 4 == 0   =====> the result is 3*(x>>2)
+    // x % 4 == 0   =====> the result is x/4*3
     // x % 4 == 1   =====>  x = 4k + 1  =====>  (12k + 3) / 4  == l + 3/4
-    // 3/4 < 1 so the floor of the x * 3/4 is equal to (x>>2) * 3 
-    int32_t result = (x>>2)*3;
+    // 3/4 < 1 so the floor of the x * 3/4 is equal to x/4*3
 
     // x % 4 == 2   =====>  x = 4k + 2  =====> (12k + 6) / 4  == l + 6/4
-    // 1 < 6/4 < 2 so the floor of the x * 3/4 is equal to (x>>2) * 3 + 1
-    if (modulo == 2) 
-        result += 1;
+    // 1 < 6/4 < 2 so the floor of the x * 3/4 is equal to x/4*3 + 1
 
     // x % 4 == 3   =====>  x = 4k + 3  =====> (12k + 9) / 4  == l + 9/4
-    // 2 < 9/4 < 3 so the floor of the x * 3/4 is equal to (x>>2) * 3 + 2
-    if (modulo == 3)
-        result += 2;
-
-    return result;
+    // 2 < 9/4 < 3 so the floor of the x * 3/4 is equal to x/4*3 + 2
+    
+    // if 0 <= x%4 <= 1 then modulo>>1 == 0, so the result is x/4*3
+    // if x%4==2 then modulo>>1 == 1, so the result is x/4*3 + 2 - 1
+    // if x%4==3 then modulo>>1 == 1, so the result is x/4*3 + 3 - 1
+    return (x>>2)*3 + modulo + (-1)*(modulo>>1);
 }
 
 

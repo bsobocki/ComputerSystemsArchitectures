@@ -1,0 +1,16 @@
+sign of the int32_t -123 is: 0
+sign of the int32_t 0 is: 0
+sign of the int32_t 123 is: -1
+sign of the int32_t -3 is: 0
+sign of the int32_t -19301 is: 0
+sign of the int32_t 123451 is: -1
+sign of the int32_t -123451 is: 0
+
+-----------
+
+sign of the uint32_t 2134098 is: 1
+sign of the uint32_t 123 is: 1
+sign of the uint32_t 0 is: 0
+sign of the uint32_t 2345 is: 1
+sign of the uint32_t 23490 is: 1
+sign of the uint32_t 4582 is: 1

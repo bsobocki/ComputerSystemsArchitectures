@@ -1,0 +1,24 @@
+have -67104831 odd number of '1'?  1
+^
+| should be 1, because the number of '1' is equal: 13
+
+have 4095 odd number of '1'?  0
+^
+| should be 0, because the number of '1' is equal: 12
+
+have 0 odd number of '1'?  0
+^
+| should be 0, because the number of '1' is equal: 0
+
+have 51 odd number of '1'?  0
+^
+| should be 0, because the number of '1' is equal: 4
+
+have 7 odd number of '1'?  1
+^
+| should be 1, because the number of '1' is equal: 3
+
+have 480597 odd number of '1'?  1
+^
+| should be 1, because the number of '1' is equal: 11
+

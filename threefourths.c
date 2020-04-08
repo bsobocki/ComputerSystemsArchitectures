@@ -47,7 +47,9 @@ int32_t threefourths(int32_t x){
     // if 0 <= x%4 <= 1 then modulo>>1 == 0, so the result is x/4*3
     // if x%4==2 then modulo>>1 == 1, so the result is x/4*3 + 2 - 1
     // if x%4==3 then modulo>>1 == 1, so the result is x/4*3 + 3 - 1
-    return (x>>2)*3 + modulo + (-1)*(modulo>>1);
+    return (x>>2) + (x>>2) + (x>>2) + modulo - (modulo>>1);
+
+    // można też: x - (x<<2) - (((x>>1) | x)&1)
 }
 
 

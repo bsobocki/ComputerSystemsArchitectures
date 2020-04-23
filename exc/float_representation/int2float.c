@@ -59,7 +59,7 @@ int32_t int2float(int32_t i) {
     if (p > 24) {
         /* ostatni bit mantysy jest na pozycji 23 na prawo od p ( p - 23 ) 
         więc jeśli chcemy dostać się do tego bitu to przesuniemy o (p - 23) - 1 
-        bo aby dostać się do bitu k-tego przesuwamy o k-1 w prawo */
+        bo aby dostać się do bitu k-tego na prawo, przesuwamy o k-1 w prawo */
         guard  = ( i >> (p - 23 - 1) ) & 1;
         /* bit round jest o 1 w prawo od bitu guard */
         round  = ( i >> (p - 23 - 2) ) & 1;
@@ -90,9 +90,27 @@ void binary(unsigned n)
     printf("\n");
 } 
 
+void test(int32_t x){
+    printf("%d as float: ",x);binary(int2float(x));
+}
+
 int main(){
-    binary(int2float(0b1110110110101100001000));
-    binary(int2float(32));
-    binary(int2float(-127));
+    test(0b1110110110101100001000);
+    test(32);
+    test(-127);
+    test(127);
+    test(13);
+    test(1245);
+    test(55);
+    test(3367);
+    test(232);
+    test(161);
+    test(100101);
+    test(-1245);
+    test(-55);
+    test(-3367);
+    test(-232);
+    test(-161);
+    test(-100101);
     return 0;
 }

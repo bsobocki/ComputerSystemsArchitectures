@@ -13,7 +13,7 @@ int32_t float2int(int32_t f) {
     int32_t  s = (f >> 31 | 1);                 /* -1 jeśli znak był ujemny */
     int32_t  e = (f >> 23 & 255) - 127;         /* wykładnik po odjęciu bias */
     uint32_t m = f << 8 | 0x80000000;           /* mantysa 1.xxx... dosunięta do lewej */
-    if (e > 31 || (e == 31 && m != 0))          /* zbyt duże e oznacza przesuniecie 1.xxx o e w prawo, czyli nadmiar */
+    if (e > 31 || (e == 31 && (m & 0x7FFFFFFF) != 0)) /* zbyt duże e oznacza przesuniecie 1.xxx o e w prawo, czyli nadmiar */
         return 0x80000000;   
     s*=(e>=0);                    
     return s * (m >> (31 - e));                 /* teraz trzeba nam przesunąć tak, aby wiodąca jedynka znajdowala się na e-tej pozycji (od 0) */

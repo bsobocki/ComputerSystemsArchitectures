@@ -15,7 +15,7 @@ int32_t float2int(int32_t f) {
     uint32_t m = f << 8 | 0x80000000;           /* mantysa 1.xxx... dosunięta do lewej */
     if (e > 31 || (e == 31 && (m & 0x7FFFFFFF) != 0)) /* zbyt duże e oznacza przesuniecie 1.xxx o e w prawo, czyli nadmiar */
         return 0x80000000;   
-    s*=(e>=0);                    
+    s*=(e>=0);                                  /* dla e<0 mamy 1.xxxx * 2^e, czyli przesunięcie w prawo, a to nam wyzeruje całą liczbę, czyli to samo co s*=(e>=0) */
     return s * (m >> (31 - e));                 /* teraz trzeba nam przesunąć tak, aby wiodąca jedynka znajdowala się na e-tej pozycji (od 0) */
 }
 
